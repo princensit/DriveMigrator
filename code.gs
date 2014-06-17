@@ -69,24 +69,24 @@ function main() {
     }
 
     // Recursive copy
-    recursiveCopy(fromFolder, toFolder);
+    recursiveCopy_(fromFolder, toFolder);
 
     // Send email
-    sendEmail();
+    sendEmail_();
 }
 
-function recursiveCopy(fromFolder, toFolder) {
-    var destFolder = copyFolder(fromFolder, toFolder);
-    copyFiles(fromFolder, destFolder);
+function recursiveCopy_(fromFolder, toFolder) {
+    var destFolder = copyFolder_(fromFolder, toFolder);
+    copyFiles_(fromFolder, destFolder);
 
     var folders = fromFolder.getFolders();
     while (folders.hasNext()) {
         var fromFolder = folders.next();
-        recursiveCopy(fromFolder, destFolder);
+        recursiveCopy_(fromFolder, destFolder);
     }
 }
 
-function copyFolder(fromFolder, toFolder) {
+function copyFolder_(fromFolder, toFolder) {
     var destFolder;
     if (ROOT_FOLDER == fromFolder) {
         destFolder = ROOT_FOLDER;
@@ -97,7 +97,7 @@ function copyFolder(fromFolder, toFolder) {
     return destFolder;
 }
 
-function copyFiles(fromFolder, destFolder) {
+function copyFiles_(fromFolder, destFolder) {
     var files = fromFolder.getFiles();
     while (files.hasNext()) {
         var file = files.next();
@@ -117,7 +117,7 @@ function copyFiles(fromFolder, destFolder) {
     }
 }
 
-function sendEmail() {
+function sendEmail_() {
     // Get the email subject line
     var subject;
 
