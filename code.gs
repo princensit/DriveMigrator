@@ -2,7 +2,7 @@
 * This Google Apps Script works on Google Drive and is responsible to copy files and folders from SOURCE directory to DESTINATION directory.
 * It doesn't support retention of previous viewers. So, you need to manually share the folder and its files to individual persons accordingly.
 *
-* @author      Prince Raj <prince.nsit@gmail.com>
+* @author      Prince Raj
 * @version     1.0
 * @since       2014-06-14
 */
